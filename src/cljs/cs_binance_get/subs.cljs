@@ -1,8 +1,9 @@
 (ns cs-binance-get.subs
   (:require
-   [re-frame.core :as re-frame]))
+    [cs-binance-get.config :as config]
+    [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- ::name
- (fn [db]
-   (:name db)))
+ ::pair
+ (fn [db [_ pair_name]] 
+   (db pair_name)))
